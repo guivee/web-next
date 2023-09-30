@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .br-label {
+    @apply mb-1 block text-base font-light text-gray-600 dark:text-gray-400;
+  }
+
+  .br-input {
+    @apply relative h-10  w-full  rounded-md border border-gray-300  bg-white py-2  px-3 text-gray-900 focus-within:border-primary-500  focus-within:ring-1   focus-within:ring-primary-500;
+  }
+
+  .br-glass {
+    @apply bg-opacity-80 backdrop-blur-lg backdrop-filter;
+  }
+
+  .br-badge {
+    @apply rounded-md border border-secondary-200 bg-secondary-50 px-1 py-0 text-secondary-800;
+  }
+}
+
+/* Remove arrows next to number input fields */
+@layer base {
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number'] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animation-delay-5000 {
+    animation-delay: 5s;
+  }
+
+  .overflow-hidden-safari {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+}
+
+/* react-day-picker style overrides START */
+.DayPicker-Day {
+  @apply items-center justify-center rounded-full pl-2 pr-2 pt-1.5 pb-1.5 text-gray-900 dark:text-gray-400 !important;
+}
+
+.DayPicker-Day:hover {
+  @apply text-gray-800 dark:bg-transparent dark:text-gray-200 !important;
+}
+
+.DayPicker-Day--selected {
+  @apply bg-yellow-400 text-white dark:bg-teal-600 !important;
+}
+
+.DayPicker-Caption {
+  @apply text-gray-700 dark:text-gray-300 !important;
+}
+
+.DayPicker-Day--disabled {
+  @apply bg-transparent text-gray-200 dark:text-gray-700 !important;
+}
+
+.DayPicker-Day--disabled:hover {
+  @apply bg-transparent text-gray-200 dark:text-gray-700 !important;
+}
+/* react-day-picker style overrides END */
+
+/* react-verification-input style overrides START */
+.container {
+  @apply h-16 w-80 items-center align-middle !important;
+}
+
+.character {
+  @apply ml-3 h-14 w-16 rounded-lg border border-gray-300 bg-gray-100 px-3 pt-3 text-2xl font-medium  leading-8 text-gray-700 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-500   !important;
+}
+
+.character:first-child {
+  @apply ml-0 !important;
+}
+
+.character--inactive {
+  @apply ml-3 h-14 w-16 rounded-lg border-0 bg-gray-100 px-3 pt-3 text-2xl text-gray-700 dark:bg-gray-900  !important;
+}
+
+.character--selected {
+  @apply border border-neutral-400 dark:border-neutral-900 !important;
+}
+/* react-verification-input style overrides END */
+
+.Container {
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: minmax(min-content, 200px) 1fr;
+  gap: 0.5rem;
+}
